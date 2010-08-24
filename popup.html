@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>popup</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Xiaoxin Lu">
+	<!-- Date: 2010-07-02 -->
+	<link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="/css/popup.css"/>
+</head>
+<body>
+<h2 id="status" style="display: none"><span></span></h2>
+<div id="checkinResult"></div>
+<ul id="locations"></ul>
+<div id="locationDetails" style="display: none;"></div>
+<div id="actions" style="display: none">
+	<label for="message"><img alt="" style="display:none" /></label>
+    <textarea name="message"id="message" placeholder="What are you doing here?" rows="1" cols="40"></textarea><br />
+  <fieldset>
+    <legend>Post checkin to</legend>
+  <label for="twitter">Twitter:</label> <input type="checkbox" name="twitter" id="twitter" value="1" />
+  <label for="fb">Facebook:</label> <input type="checkbox" name="facebook" id="fb" value="1" /> 
+  <button id="checkin">Check in</button>
+  </fieldset>
+</div>
+
+<div id="noLocation" style="display: none">
+	<a href="#">Show on maps</a><br /> <br />
+     <div class="loggedIn">
+      <input type="text" placeholder="Name" name="name" /> is a 
+      <select name="type">
+         <option>Bar</option>
+         <option>Business</option>
+         <option>Church</option>
+         <option>Club</option>
+         <option>Coffee Shop</option>
+         <option>Event</option>
+         <option>Fast Food</option>
+         <option>Gas</option>
+         <option>Groceries</option>
+         <option>Hospital</option>
+         <option>Hotel</option>
+         <option>Library</option>
+         <option>Movies</option>
+         <option>Museum</option>
+         <option>Other</option>
+         <option>Park</option>
+         <option>Restaurant</option>
+         <option>School</option>
+         <option>Shopping</option>
+         <option>Shopping Mall</option>
+         <option>Store</option>
+         <option>Venue</option>
+      </select><br />
+      <input type="text" placeholder="Street address (optional)" name="address" /><br />
+      <input type="text" placeholder="City (optional)" name="city" />   <input type="text" placeholder="State (optional)" name="state" /><br />
+      <button>Add Location</button>
+   </div>
+   
+</div>
+
+<div id="login">
+   <h2>Login to check in <span></span></h2>
+   <input type="text" id="username" placeholder="Username" /> <input type="password" id="password" placeholder="Password"><br>
+   <button>Login to TriOut</button> <a href="http://trioutnc.com/" style="margin-left: 20px; font-size: 80%">Sign up for an account</a>
+</div>
+ <div id="getLocation" class="controls locate">Locate me</div>
+<div id="loginStatus" style="display:none">Logged in as <span></span> <a href="#" title="Logout of account"><img src="images/fancy_close.png" alt="Logout" title="Logout" /></a></div>
+
+<script id="locationHeaderTpl" type="text/html">
+	 <li><a href="#" ref="${ID}" title="${location_address}"><div>${distance} mi</div>${location_name}</a></li>
+</script>
+
+<script id="checkinResultTpl" type="text/html">
+  <h2>${awardTitle}</h2>
+  <h3>${awardHeading}</h3>
+  <img src="${awardImage}" />
+</script>
+<script src="js/debug.js"></script>
+<script src="js/lib/jquery-1.4.2.min.js"></script>
+<script src="js/lib/pubsub.js"></script>
+<script src="js/lib/jquery.blockUI.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/testData.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/lib/jquery.tmpl.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+</body>
+</html>

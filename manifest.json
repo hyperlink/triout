@@ -1,0 +1,22 @@
+{
+	"name": "Triout",
+	"version": "0.5",
+	"description": "Explore the Triangle!",
+	"background_page": "background.html",
+	"browser_action": {
+		"default_icon": "images/tridot_128.png",
+		"popup": "popup.html",
+		"default_title": "Check in"
+	 },
+	"icons" : {
+		"16" : "images/tridot_16.png",
+		"48" : "images/tridot_48.png",
+		"128" : "images/tridot_128.png"
+	},
+	"permissions": [
+	    "geolocation",
+		"tabs",
+		"https://api.TriOutNC.com/"
+	],
+	"minimum_chrome_version": "6.0"
+}
